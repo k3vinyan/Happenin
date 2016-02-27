@@ -13,13 +13,13 @@ class HappeningsController < ApplicationController
   end
 
   def create
-    @happening = Happening.new(happening_params)
+    # @happening = Happening.new(happening_params)
 
-    if @happening.save
-      redirect_to root_url
-    else
-      render :new
-    end
+    # if @happening.save
+    #   redirect_to root_url
+    # else
+    #   render :new
+    # end
   end
 
   def edit
