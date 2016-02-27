@@ -15,26 +15,18 @@
 //= require turbolinks
 //= require_tree .
 
- $(function(){
-    height = $(self).height();
-    width = $(self).width();
-    $(".fullWidth").css({  width: width })
-    $(".fullHeigth").css({ height: height })
-  }())
 
 $(document).ready(function(){
 
-  $("#business").on('click', function(e){
+  $("button#bussSignupButton").on('click', function(e){
     e.preventDefault();
-    // $(".bButton").html("<%= escape_javascript(render: 'businesses/_form')  %>");
       $.ajax({
         type: 'GET',
-        url: '/businesses',
+        url: '/businesses/new',
         success: function(data){
           $(".leftContent").empty();
           $(".leftContent").removeClass('bottomDiv')
           $(".leftContent").html(data);
-          console.log(data)
         },
         error: function(xhr, options, error){
           console.log(xhr.status);
@@ -42,32 +34,58 @@ $(document).ready(function(){
         }
       })
   });
+
+  $("button#cusSignupButton").on('click', function(e){
+    e.preventDefault();
+      $.ajax({
+        type: 'GET',
+        url: '/customers/new',
+        success: function(data){
+          $(".leftContent").empty();
+          $(".leftContent").removeClass('bottomDiv')
+          $(".leftContent").html(data);
+        },
+        error: function(xhr, options, error){
+          console.log(xhr.status);
+          console.log(error);
+        }
+      })
+  });
+
+  $("button#bussLoginButton").on('click', function(e){
+    e.preventDefault();
+    $.ajax({
+      type: 'GET',
+      url: '/businesses',
+      success: function(data){
+        $(".leftContent").empty();
+        $(".leftContent").removeClass('bottomDiv')
+        $(".leftContent").html(data);
+      },
+      error: function(xhr, options, error){
+        console.log(xhr.status);
+        console.log(error);
+      }
+    })
+  })
+
+  $("button#cusLoginButton").on('click', function(e){
+    e.preventDefault();
+    $.ajax({
+      type: 'GET',
+      url: '/customers',
+      success: function(data){
+        $(".leftContent").empty();
+        $(".leftContent").removeClass('bottomDiv')
+        $(".leftContent").html(data);
+      },
+      error: function(xhr, options, error){
+        console.log(xhr.status);
+        console.log(error);
+      }
+    })
+  })
+
 })
 
-
-
-
-
-
-
-// $(window).resize(function(){
-//   height = $(self).height();
-//   width = $(self).width();
-//   $(".fullpage").css({ height: height, width: width })
-//   console.log($(window).height())
-// })
-
-// $(window).resize(function(){
-//   height = $(self).height();
-//   width = $(self).width();
-//   $(".page").css({ height: height, width: width })
-//   console.log($(window).height())
-// })
-
-// $(window).resize(function(){
-//   height = $(self).height();
-//   width = $(self).width();
-//   $(".fullpage").css({ height: height, width: width })
-//   console.log($(window).height())
-// })
 

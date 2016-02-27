@@ -3,20 +3,30 @@ class CustomersController < ApplicationController
 
   def index
     @customers = Customer.all
+
+    if request.xhr?
+     render :partial => "login", :layout => false
+    end
   end
 
   def show
+    @user = Customer.find(params[:id])
+    puts @user.inspect
   end
 
   def new
     @customer = Customer.new
+
+    if request.xhr?
+     render :partial => "form", :layout => false
+    end
   end
 
   def create
     @customer = Customer.new(customer_params)
 
     if @customer.save
-      redirect_to root_url
+      redirect_to @customer
     else
       render :new
     end

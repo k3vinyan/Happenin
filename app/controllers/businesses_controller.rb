@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
     @businesses = Business.all
 
     if request.xhr?
-     render :partial => "form", :layout => false
+     render :partial => "login", :layout => false
     end
   end
 
@@ -14,6 +14,10 @@ class BusinessesController < ApplicationController
 
   def new
     @business = Business.new
+
+    if request.xhr?
+     render :partial => "form", :layout => false
+    end
   end
 
   def create
