@@ -3,6 +3,10 @@ class BusinessesController < ApplicationController
 
   def index
     @businesses = Business.all
+
+    if request.xhr?
+     render :partial => "form", :layout => false
+    end
   end
 
   def show

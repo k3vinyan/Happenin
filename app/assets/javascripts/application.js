@@ -24,8 +24,23 @@
 
 $(document).ready(function(){
 
-  $("#business").on('click', function(){
-
+  $("#business").on('click', function(e){
+    e.preventDefault();
+    // $(".bButton").html("<%= escape_javascript(render: 'businesses/_form')  %>");
+      $.ajax({
+        type: 'GET',
+        url: '/businesses',
+        success: function(data){
+          $(".leftContent").empty();
+          $(".leftContent").removeClass('bottomDiv')
+          $(".leftContent").html(data);
+          console.log(data)
+        },
+        error: function(xhr, options, error){
+          console.log(xhr.status);
+          console.log(error);
+        }
+      })
   });
 })
 

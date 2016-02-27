@@ -19,10 +19,18 @@
 .leftContainer {
   height: 640px;
 }
-.bButton {
+.leftContent {
+  text-align: center;
+}
+.logo {
+  position: static;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+.bottomDiv{
   position: relative;
   top: 80%;
   text-align: center;
 }
-
 

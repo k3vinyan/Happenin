@@ -1,4 +1,5 @@
-<%= form_for @business do |f| %>
+<div class="bForm">
+<%= form_for :business do |f| %>
   <div class="form-div">
     <%= f.label :name %><br>
     <%= f.text_field :name, id: 'name_input' %>
@@ -34,3 +35,4 @@
   </div>
 
 <% end %>
+</div>
