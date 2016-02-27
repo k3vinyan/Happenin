@@ -2,11 +2,6 @@ Rails.application.routes.draw do
 
   root 'splash#index'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-
   resources :businesses
   resources :customers
   resources :happenings
@@ -60,4 +55,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+=======
+>>>>>>> bc16c20534d177e468903ee135f6941be2308dc6
 end
