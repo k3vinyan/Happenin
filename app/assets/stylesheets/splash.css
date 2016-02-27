@@ -1,5 +1,5 @@
 .blue {
-  background-color: blue;
+  background-color: #67E6EC;
 }
 .red {
   background-color: red;
@@ -7,4 +7,22 @@
 .green {
   background-color: green;
 }
+
+.noMargin {
+  margin: 0;
+}
+
+.border {
+  border-style: solid;
+  border-color: #67E6EC;
+}
+.leftContainer {
+  height: 640px;
+}
+.bButton {
+  position: relative;
+  top: 80%;
+  text-align: center;
+}
+
 

@@ -14,3 +14,45 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+ $(function(){
+    height = $(self).height();
+    width = $(self).width();
+    $(".fullWidth").css({  width: width })
+    $(".fullHeigth").css({ height: height })
+  }())
+
+$(document).ready(function(){
+
+  $("#business").on('click', function(){
+
+  });
+})
+
+
+
+
+
+
+
+// $(window).resize(function(){
+//   height = $(self).height();
+//   width = $(self).width();
+//   $(".fullpage").css({ height: height, width: width })
+//   console.log($(window).height())
+// })
+
+// $(window).resize(function(){
+//   height = $(self).height();
+//   width = $(self).width();
+//   $(".page").css({ height: height, width: width })
+//   console.log($(window).height())
+// })
+
+// $(window).resize(function(){
+//   height = $(self).height();
+//   width = $(self).width();
+//   $(".fullpage").css({ height: height, width: width })
+//   console.log($(window).height())
+// })
+
