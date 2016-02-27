@@ -61,5 +61,4 @@ ActiveRecord::Schema.define(version: 20160227034328) do
   add_foreign_key "business_customers", "businesses"
   add_foreign_key "business_customers", "customers"
   add_foreign_key "happenings", "businesses"
-
 end
