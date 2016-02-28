@@ -1,3 +1,4 @@
+// Google maps and customer geolocation code
 function initMap(){
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
@@ -31,3 +32,25 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     'Error: The Geolocation service failed.' :
     'Error: Your browser doesn\'t support geolocation.');
 }
+
+// GeoFire code
+
+//create Firebase instance
+var ref = new Firebase("https://happenin-club.firebaseio.com/happenin");
+//create geofire instance
+var geoFire = new GeoFire(ref.child("_geofire"));
+// Keep track of all of the vehicles currently within the query
+var happeningsInQuery = {};
+// Create a new GeoQuery instance
+var geoQuery = geoFire.query({
+  center: center,
+  radius: radiusInKm
+});
+
+
+
+
+
+
+
+
