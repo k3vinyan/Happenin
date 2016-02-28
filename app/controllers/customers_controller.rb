@@ -2,21 +2,28 @@ class CustomersController < ApplicationController
   before_action :set_customer, except: [:index, :new, :create]
 
   def index
-    @customers = Customer.all
+
   end
 
   def show
+    @user = Customer.find(params[:id])
+    puts @user.inspect
   end
 
   def new
     @customer = Customer.new
+
+    if request.xhr?
+     render :partial => "form", :layout => false
+    end
   end
 
   def create
     @customer = Customer.new(customer_params)
 
     if @customer.save
-      redirect_to root_url
+      session[:customer_id] = @customer.id
+      redirect_to allhaps_url, :notice => "Signed up!"
     else
       render :new
     end
@@ -33,6 +40,12 @@ class CustomersController < ApplicationController
     end
   end
 
+  def login
+    if request.xhr?
+      render :partial => "login", :layout => false
+    end
+  end
+
   def destroy
     @customer.destroy
 
@@ -45,6 +58,6 @@ class CustomersController < ApplicationController
     end
 
     def set_customer
-      @business = Customer.find(params[:id])
+      @customer = Customer.find(params[:id])
     end
 end

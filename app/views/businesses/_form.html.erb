@@ -1,3 +1,4 @@
+<div class="bForm">
 <%= form_for @business do |f| %>
   <div class="form-div">
     <%= f.label :name %><br>
@@ -30,7 +31,8 @@
   </div>
 
   <div class="form_div">
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit", id: 'new_bus'%>
   </div>
 
 <% end %>
+</div>
