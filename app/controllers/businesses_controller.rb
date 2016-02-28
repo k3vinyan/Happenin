@@ -24,7 +24,7 @@ class BusinessesController < ApplicationController
     @business = Business.new(business_params)
     if @business.save
       session[:business_id] = @business.id
-      redirect_to business_url, :notice => "Signed up!"
+      redirect_to business_url(@business), :notice => "Signed up!"
     else
       render :new
     end
@@ -65,9 +65,9 @@ class BusinessesController < ApplicationController
     end
   end
 
-    # def set_business
-    #   @business = Business.find(params[:id])
-    # end
+    def set_business
+      @business = Business.find(params[:id])
+    end
 
     # def customer_params
     #   params.require(:customer).permit(:email, :password)

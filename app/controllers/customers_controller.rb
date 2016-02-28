@@ -23,7 +23,7 @@ class CustomersController < ApplicationController
 
     if @customer.save
       session[:customer_id] = @customer.id
-      redirect_to happenings_url, :notice => "Signed up!"
+      redirect_to customer_url(@customer), :notice => "Signed up!"
     else
       render :new
     end
