@@ -19,7 +19,7 @@
     <%= f.datetime_field :end_time, id: 'end_time_input' %>
   </div>
   <input type="hidden" id="business-id" value="<%= @business.id %>" />
-
+  <input type="hidden" id="business-address" value="<%= "#{@business.address} #{@business.city} #{@business.state} #{@business.zip}" %>" />
   <div class="form_div">
     <%= f.submit "Submit", id: 'new_happenin' %>
   </div>
