@@ -1,2 +1,32 @@
-Hi!
-<%= @user.name %>
+<div class="container">
+  <div class="mdl-grid nopadding">
+    <div class="mdl-cell mdl-cell--4-col nomargin dashboard-header">
+      <img class="dashboard-header-image" src="http://placehold.it/200" />
+    </div>
+
+    <div class="mdl-cell mdl-cell--8-col nomargin dashboard-header">
+      <%= hidden_field :customer, :id %>
+      <h2><%= @customer.name %></h2>
+      <p><%= @customer.email %> <%= @customer.phone %></p>
+      <a href="#" id="edit-customer-link">
+        <i class="material-icons">create</i> edit user info
+      </a>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col nomargin">
+      
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col nomargin">
+      <ul>
+        <li>12321</li>
+        <li>12321</li>
+        <li>12321</li>
+        <li>12321</li>
+      </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col nomargin" id="edit-pane">
+    </div>
+  </div>
+</div>

@@ -1,1 +1,33 @@
+<div class="container">
+  <div class="mdl-grid nopadding">
+    <div class="mdl-cell mdl-cell--4-col nomargin dashboard-header">
+      <img class="dashboard-header-image" src="http://placehold.it/200" />
+    </div>
 
+    <div class="mdl-cell mdl-cell--8-col nomargin dashboard-header">
+      <%= hidden_field :business, :id %>
+      <h2><%= @business.name %></h2>
+      <p><%= @business.address %> <%= @business.city %> <%= @business.state %></p>
+      <a href="#" id="edit-business-link">
+        <i class="material-icons">create</i> edit business info
+      </a>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col nomargin">
+      <button class="mdl-button mdl-js-button mdl-button--raised action-button">Twitter</button><br />
+      <button class="mdl-button mdl-js-button mdl-button--raised action-button">Facebook</button>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col nomargin">
+      <ul>
+        <li>12321</li>
+        <li>12321</li>
+        <li>12321</li>
+        <li>12321</li>
+      </ul>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col nomargin" id="edit-pane">
+    </div>
+  </div>
+</div>

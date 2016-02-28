@@ -1,4 +1,4 @@
-// $(document).ready(function(){
+$(document).ready(function(){
 //   $('.leftContent').bind('DOMSubtreeModified', function(e) {
 //     $('.busSubmittButton').on('click', function(e){
 //       console.log("cat")
@@ -36,4 +36,15 @@
     //   })
     // }
 
-// })
+    $('#edit-business-link').click(function(e) {
+      e.preventDefault();
+      var businessID = $('#business_id').val();
+      $.ajax({
+        method: 'GET',
+        url: '/businesses/' + businessID + '/edit',
+        async: true
+      }).done(function(html) {
+        $('#edit-pane').html(html);
+      })
+    });
+})
