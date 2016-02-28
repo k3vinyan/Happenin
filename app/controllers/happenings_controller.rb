@@ -20,7 +20,7 @@ class HappeningsController < ApplicationController
 
     base_uri = 'https://happenin-club.firebaseio.com'
     firebase = Firebase::Client.new(base_uri)
-    response = firebase.set("happenin", {business_id => params[:happening]})
+    response = firebase.push("happenin", {business_id => params[:happening]})
 
   end
 
