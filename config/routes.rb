@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'welcome/login'
   get 'sessions/new'
+  get 'customers/login'
+
 
   post 'sessions/create'
 
@@ -14,7 +17,7 @@ Rails.application.routes.draw do
     resources :happenings
   end
   resources :customers
-  get 'customer/login' => 'customer#login'
+
 
 
   # Example of regular route:

@@ -1,16 +1,18 @@
 <%= form_for @business, {url: sessions_create_path } do |f| %>
   <div class="form-div">
-    <%= f.label :email %><br>
+    <%= f.label :email, :class => "splashFont" %><br>
     <%= f.text_field :email, id: 'email_input' %>
   </div>
 
   <div class="form-div">
-    <%= f.label :password %><br>
+    <%= f.label :password, :class => "splashFont"  %><br>
     <%= f.text_field :password, id: 'password_input' %>
   </div>
   <%= f.hidden_field :is_business, :value => true %>
+  <br>
   <div class="form_div">
-    <%= f.submit "Submit", :class => 'busSubmittButton' %>
+    <%= f.submit "Submit", :class => 'busSubmittButton mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %>
+    <button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent backButton'>Back</button>
   </div>
 
 <% end %>
