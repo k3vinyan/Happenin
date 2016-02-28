@@ -57,7 +57,7 @@ $(document).ready(function(){
     e.preventDefault();
     $.ajax({
       type: 'GET',
-      url: '/businesses',
+      url: '/sessions/new',
       success: function(data){
         $(".leftContent").empty();
         $(".leftContent").removeClass('bottomDiv')
