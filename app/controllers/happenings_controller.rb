@@ -13,6 +13,7 @@ class HappeningsController < ApplicationController
   end
 
   def new
+    @business = Business.find(1)
     @happening = Happening.new
   end
 
