@@ -1,5 +1,9 @@
-.bFrom {
+.bForm {
   text-align: center;
   position: relative;
-  top: 90%;
+  bottom: 200px;
+}
+.splashFont {
+  color: white;
+  font-weight: bold;
 }

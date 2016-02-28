@@ -19,6 +19,7 @@
 
 $(document).ready(function(){
 
+ $('.leftContent').bind('DOMSubtreeModified', function(e) {
   $("button#bussSignupButton").on('click', function(e){
     e.preventDefault();
       $.ajax({
@@ -34,8 +35,10 @@ $(document).ready(function(){
           console.log(error);
         }
       })
+    })
   });
 
+ $('.leftContent').bind('DOMSubtreeModified', function(e) {
   $("button#cusSignupButton").on('click', function(e){
     e.preventDefault();
       $.ajax({
@@ -51,8 +54,10 @@ $(document).ready(function(){
           console.log(error);
         }
       })
+    })
   });
 
+ $('.leftContent').bind('DOMSubtreeModified', function(e) {
   $("button#bussLoginButton").on('click', function(e){
     e.preventDefault();
     $.ajax({
@@ -69,12 +74,14 @@ $(document).ready(function(){
       }
     })
   })
+})
 
+ $('.leftContent').bind('DOMSubtreeModified', function(e) {
   $("button#cusLoginButton").on('click', function(e){
     e.preventDefault();
     $.ajax({
       type: 'GET',
-      url: '/customers',
+      url: '/customers/login',
       success: function(data){
         $(".leftContent").empty();
         $(".leftContent").removeClass('bottomDiv')
@@ -86,7 +93,7 @@ $(document).ready(function(){
       }
     })
   })
-
+ })
 })
 
 

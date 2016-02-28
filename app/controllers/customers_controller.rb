@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, except: [:index, :new, :create]
+  before_action :set_customer, except: [:index, :new, :create, :login]
 
   def index
 
@@ -41,6 +41,7 @@ class CustomersController < ApplicationController
   end
 
   def login
+    puts "cats"
     if request.xhr?
       render :partial => "login", :layout => false
     end
