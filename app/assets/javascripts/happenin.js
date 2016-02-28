@@ -9,12 +9,23 @@ $(document).ready(function(){
       var businessID = $('#business-id').val()
       event.preventDefault();
 
-        var myFirebaseRef = new Firebase("https://happenin-club.firebaseio.com/happenin");
+        var myFirebaseRef = new Firebase("https://happenin-club.firebaseio.com");
 
         myFirebaseRef.child("happenin").child(businessID).push({title: title, description: description, startTime: startTime, endTime: endTime})
     });
+
+
 });
 
 // Retrieve data from Firebase
 
 
+// var ref = new Firebase("https://happenin-club.firebaseio.com/happenin/1");
+
+// ref.on('child_added',function(data){
+//   console.log(data.val());
+// })
+
+// ref.on('child_added',function(data){
+//   console.log(data.val());
+// })
