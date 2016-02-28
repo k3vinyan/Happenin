@@ -1,11 +1,10 @@
 $(document).ready(function(){
   $('.leftContent').bind('DOMSubtreeModified', function(e) {
     $('.busSubmittButton').on('click', function(e){
-      console.log("cat")
       e.preventDefault();
       $.ajax({
         type: 'get',
-        url: '/businesses/show',
+        url: '/businesses/<new></new>',
         success: function(data){
          console.log(data)
         },

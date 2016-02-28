@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if request.xhr?
-      render :partial => "login", :layout => false
+      render :partial => "businesses/login", :layout => false
     end
   end
 
