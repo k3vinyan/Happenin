@@ -6,6 +6,7 @@ class BusinessesController < ApplicationController
   end
 
   def show
+    # @business = Business.find_by(id: session[:business_id])
   end
 
   def new
@@ -14,9 +15,9 @@ class BusinessesController < ApplicationController
 
   def create
     @business = Business.new(business_params)
-
     if @business.save
-      redirect_to root_url
+      session[:business_id] = @business.id
+      redirect_to business_url, :notice => "Signed up!"
     else
       render :new
     end

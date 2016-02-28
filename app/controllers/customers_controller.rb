@@ -2,7 +2,8 @@ class CustomersController < ApplicationController
   before_action :set_customer, except: [:index, :new, :create]
 
   def index
-    @customers = Customer.all
+    # @customers = Customer.all
+    redirect_to happinings_path
   end
 
   def show
@@ -16,7 +17,8 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     if @customer.save
-      redirect_to root_url
+      session[:customer_id] = @customer.id
+      redirect_to happenings_url, :notice => "Signed up!"
     else
       render :new
     end
@@ -45,6 +47,6 @@ class CustomersController < ApplicationController
     end
 
     def set_customer
-      @business = Customer.find(params[:id])
+      @customer = Customer.find(params[:id])
     end
 end
