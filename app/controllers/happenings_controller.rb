@@ -16,7 +16,8 @@ class HappeningsController < ApplicationController
     @happening = Happening.new(happening_params)
 
     if @happening.save
-      redirect_to root_url
+      p @happening
+      redirect_to happenings_url
     else
       render :new
     end
