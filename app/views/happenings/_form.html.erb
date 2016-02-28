@@ -18,7 +18,7 @@
     <%= f.label :end_time %><br>
     <%= f.datetime_field :end_time, id: 'end_time_input' %>
   </div>
-
+  <input type="hidden" id="business-id" value="<%= @business.id %>" />
 
   <div class="form_div">
     <%= f.submit "Submit", id: 'new_happenin' %>
