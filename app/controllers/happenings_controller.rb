@@ -2,7 +2,10 @@ class HappeningsController < ApplicationController
   before_action :set_happening, except: [:index, :new, :create]
 
   def index
-    @happenings = Happening.all
+    # base_uri = 'https://happenin-club.firebaseio.com'
+    # firebase = Firebase::Client.new(base_uri)
+    # response = firebase.push("happenin", {business_id => params[:happening]})
+
   end
 
   def show
@@ -20,7 +23,7 @@ class HappeningsController < ApplicationController
 
     base_uri = 'https://happenin-club.firebaseio.com'
     firebase = Firebase::Client.new(base_uri)
-    response = firebase.push("happenin", {business_id => params[:happening]})
+    response = firebase.child("happenin").push("happenin", {business_id => params[:happening]})
 
   end
 
