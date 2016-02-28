@@ -6,9 +6,6 @@ class HappeningsController < ApplicationController
   end
 
   def index
-    # base_uri = 'https://happenin-club.firebaseio.com'
-    # firebase = Firebase::Client.new(base_uri)
-    # response = firebase.push("happenin", {business_id => params[:happening]})
 
   end
 
@@ -22,13 +19,13 @@ class HappeningsController < ApplicationController
 
   def create
 
-    business_id = session[:id]
+    # business_id = session[:id]
     # @happening = Happening.new(params)
     # @happening.save
 
-    base_uri = 'https://happenin-club.firebaseio.com'
-    firebase = Firebase::Client.new(base_uri)
-    response = firebase.child("happenin").push("happenin", {business_id => params[:happening]})
+    # base_uri = 'https://happenin-club.firebaseio.com'
+    # firebase = Firebase::Client.new(base_uri)
+    # response = firebase.child("happenin").push("happenin", {business_id => params[:happening]})
 
   end
 
