@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def new
       @business = Business.new
     if request.xhr?
+      # render :partial => "businesses/login", :layout => false
       render :partial => "businesses/login", locals: {business: @business}, :layout => false
     end
   end
