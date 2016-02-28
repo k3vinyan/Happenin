@@ -1,4 +1,5 @@
-$(document).ready(function(){
+  $(document).ready(function(){
+
   $('.leftContent').bind('DOMSubtreeModified', function(e) {
     $('.busSubmittButton').on('click', function(e){
       e.preventDefault();
@@ -14,7 +15,17 @@ $(document).ready(function(){
         }
       })
     })
+
+    $('.showContent').on('click', function(e){
+      e.preventDefault()
+        $(".leftContent").empty();
+          $(".leftContent").removeClass('bottomDiv')
+          $(".leftContent").html(data);
+    })
+
   });
+
+
     // $('.leftContent').bind('DOMSubtreeModified', function(e) {
     //   $('.createDealsButton').on('click', function(e){
     //     e.preventDefault();

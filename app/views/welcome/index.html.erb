@@ -1,47 +1,24 @@
-<div class="mdl-layout mdl-js-layout">
-  <header class="mdl-layout__header blue">
-  </header>
-  <main class="mdl-layout__content">
-    <div class="mdl-grid">
-      <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet  mdl--4-col-phone blue leftContainer">
-        <div class="logoContainer">
-          <div class="logo">What's</div>
-          <div class="logo">Happenin?</div>
-        </div>
-        <div class="leftContent buttonContainer">
-          <div>
-            <label>Business</label>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            id="bussLoginButton">
-              login
-            </button>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="bussSignupButton">
-              Signup
-            </button>
-          </div>
-          <p></p>
-          <div>
-            <label>Customer</label>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            id="cusLoginButton">
-              login
-            </button>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="cusSignupButton">
-              Signup
-            </button>
-          </div>
-        </div>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout__title">Happenin</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#">Login</a>
+      <a class="mdl-navigation__link" href="#">Signup</a>
+      <a class="mdl-navigation__link" href="#">Login</a>
+      <a class="mdl-navigation__link" href="#">Signup</a>
+      <!-- Anuja's buttons below! -->
+      <button id ="business" type="button"  class= "btn btn-default business">Create your Business Happinins</button>
+      <button id ="facebookAuth" type="button"  class= "btn btn-default facebookAuth">Connect using facebook</button>
+<button id ="twitterAuth" type="button"  class= "btn btn-default twitterAuth">Connect using Twitter</button>
+    </nav>
+  </div>
+  <main class="mdl-layout__content showContent">
 
-      </div>
-      <div class="mdl-cell mdl-cell--6-col mdl--6-col-tablet mdl--4-col-phone blue fullHeight">right</div>
-    </div>
   </main>
 </div>
-</div>
-
-<!-- Anuja's buttons below! -->
-<button id ="business" type="button"  class= "btn btn-default business">Create your Business Happinins</button>
 
 
-<button id ="facebookAuth" type="button"  class= "btn btn-default facebookAuth">Connect using facebook</button>
-<button id ="twitterAuth" type="button"  class= "btn btn-default twitterAuth">Connect using Twitter</button>
+
+
+
+
