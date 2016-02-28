@@ -1,5 +1,9 @@
 class HappeningsController < ApplicationController
-  before_action :set_happening, except: [:index, :new, :create]
+  before_action :set_happening, except: [:index, :new, :create, :allhaps]
+
+  def allhaps
+    @happenings = Happening.all
+  end
 
   def index
     @happenings = Happening.all
@@ -46,7 +50,7 @@ class HappeningsController < ApplicationController
       params.require(:happening).permit(:title, :description, :start_time, :end_time)
     end
 
-    def set_customer
-      @business = Happening.find(params[:id])
+    def set_happening
+      @happening = Happening.find(params[:id])
     end
 end

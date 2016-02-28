@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get 'allhaps' => 'happenings#allhaps'
+
   resources :businesses do
     resources :happenings
   end
