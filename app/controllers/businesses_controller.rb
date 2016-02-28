@@ -10,6 +10,25 @@ class BusinessesController < ApplicationController
   end
 
   def show
+    @user = Customer.find_by(customer_params)
+
+    if request.xhr?
+     #need to auth
+     render :partial => "show", :layout => false
+    end
+  end
+
+  def partial
+
+    if request.xhr?
+      if request[:partion => 'create']
+        render :partial => "partials/createDealsForm", :layout => false
+      elsif request[:partion => 'ongoing']
+        render :partial => "partials/ongoingDeals", :layout => false
+      elsif request[:partion => 'save']
+        rener :partial => "partials/reuseableDeals", :layout=> false
+      end
+    end
   end
 
   def new
@@ -24,7 +43,7 @@ class BusinessesController < ApplicationController
     @business = Business.new(business_params)
 
     if @business.save
-      redirect_to root_url
+      redirect_to @business
     else
       render :new
     end
@@ -54,5 +73,9 @@ class BusinessesController < ApplicationController
 
     def set_business
       @business = Business.find(params[:id])
+    end
+
+    def customer_params
+      params.require(:customer).permit(:email, :password)
     end
 end
