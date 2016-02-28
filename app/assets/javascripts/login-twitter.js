@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $( "button.twitterAuth" ).on( "click", function( event ) {
         var ref = new Firebase("http://happenin-club.firebaseio.com");

@@ -13,13 +13,15 @@ class HappeningsController < ApplicationController
   end
 
   def create
-    # @happening = Happening.new(happening_params)
+    business_id = session[:id]
+    # @happening = Happening.new(params)
+    # @happening.save
 
-    # if @happening.save
-    #   redirect_to root_url
-    # else
-    #   render :new
-    # end
+    base_uri = 'https://happenin-club.firebaseio.com'
+    firebase = Firebase::Client.new(base_uri)
+
+
+    response = firebase.set("happenin", {business_id => happening_params})
   end
 
   def edit
