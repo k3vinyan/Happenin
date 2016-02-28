@@ -1,0 +1,28 @@
+div {
+  box-sizing: border-box;
+}
+
+.debug {
+  border: 1px solid red;
+}
+
+.nomargin {
+  margin: 0;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.dashboard-header-image {
+  margin: 0 1rem;
+}
+
+.dashboard-header {
+  background: #333;
+  color: #eee;
+}
+
+.action-button {
+  margin: 1rem;
+}

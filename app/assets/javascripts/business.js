@@ -17,6 +17,16 @@ $(document).ready(function(){
       })
     })
   })
+
+    $('#edit-business-link').click(function(e) {
+      e.preventDefault();
+      var businessID = $('#business_id').val();
+      $.ajax({
+        method: 'GET',
+        url: '/businesses/' + businessID + '/edit',
+        async: true
+      }).done(function(html) {
+        $('#edit-pane').html(html);
+      })
+    });
 })
-
-
