@@ -1,3 +1,12 @@
+/*@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+}*/
+
+@font-face {
+    font-family: 'master';
+    src: url('master_of_break.ttf');
+}
 .blue {
   background-color: #67E6EC;
 }
@@ -30,10 +39,36 @@
 }
 .buttonContainer{
   position: relative;
-  top: 70%;
+  top: 200px;
   text-align: center;
 }
 .logoContainer{
   position: relative;
   top:10%;
+}
+
+.fontLabel {
+  color: white;
+  font-size: medium;
+}
+.labelContainer{
+  color: white;
+  text-align: center;
+  font-family: "Gotham";
+}
+
+h1 {
+  font-family: "master";
+  font-weight: bold;
+  font-size: 12em;
+  opacity: 80%;
+}
+
+.slogan {
+  font-size: 3em;
+  font-style: italic;
+  font-style: oblique;
+}
+.oauthButton {
+  border-style: solid;
 }
