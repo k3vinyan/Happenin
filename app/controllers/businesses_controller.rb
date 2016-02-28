@@ -10,11 +10,13 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @user = Customer.find_by(customer_params)
+    # @user = Business.find_by(customer_params)
 
     if request.xhr?
-     #need to auth
-     render :partial => "show", :layout => false
+     puts "no"
+     render :partial => "test", :layout => false
+    else
+      puts "no"
     end
   end
 
@@ -71,11 +73,11 @@ class BusinessesController < ApplicationController
       params.require(:business).permit(:name, :address, :city, :state, :zip, :password)
     end
 
-    def set_business
-      @business = Business.find(params[:id])
-    end
+    # def set_business
+    #   @business = Business.find(params[:id])
+    # end
 
-    def customer_params
-      params.require(:customer).permit(:email, :password)
-    end
+    # def customer_params
+    #   params.require(:customer).permit(:email, :password)
+    # end
 end
