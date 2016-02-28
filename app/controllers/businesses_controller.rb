@@ -1,4 +1,5 @@
 class BusinessesController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
   before_action :set_business, except: [:index, :new, :create]
 
   def index
@@ -33,6 +34,7 @@ class BusinessesController < ApplicationController
   end
 
   def update
+    p params
     if @business.update_attributes(business_params)
       redirect_to @business
     else
@@ -48,7 +50,7 @@ class BusinessesController < ApplicationController
 
   private
     def business_params
-      params.require(:business).permit(:name, :address, :city, :state, :zip, :password)
+      params.permit(:name, :address, :city, :state, :zip, :password, :twitterDisplayName, :twitterUid, :twitterProfile_image_url, :twitterUsername)
     end
 
     def partial

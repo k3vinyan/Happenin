@@ -1,7 +1,7 @@
 <div class="container">
   <div class="mdl-grid nopadding">
     <div class="mdl-cell mdl-cell--4-col nomargin dashboard-header">
-      <img class="dashboard-header-image" src="http://placehold.it/200" />
+      <img class="dashboard-header-image" src="<%= @business.twitterProfile_image_url %>" />
     </div>
 
     <div class="mdl-cell mdl-cell--8-col nomargin dashboard-header">
@@ -14,8 +14,8 @@
     </div>
 
     <div class="mdl-cell mdl-cell--4-col nomargin">
-      <button class="mdl-button mdl-js-button mdl-button--raised action-button">Twitter</button><br />
-      <button class="mdl-button mdl-js-button mdl-button--raised action-button">Facebook</button>
+      <button id ="facebookAuth" type="button"  class= "btn btn-default facebookAuth oauthButton">Connect using facebook</button>
+      <button id ="twitterAuth" type="button"  class= "btn btn-default twitterAuth oauthButton">Connect using Twitter</button>
     </div>
 
     <div class="mdl-cell mdl-cell--4-col nomargin">
