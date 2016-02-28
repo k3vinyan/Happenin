@@ -1,0 +1,39 @@
+.blue {
+  background-color: #67E6EC;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+.border {
+  border-style: solid;
+  border-color: #67E6EC;
+}
+.leftContainer {
+  height: 640px;
+}
+.leftContent {
+  text-align: center;
+}
+.logo {
+  position: static;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+.buttonContainer{
+  position: relative;
+  top: 70%;
+  text-align: center;
+}
+.logoContainer{
+  position: relative;
+  top:10%;
+}

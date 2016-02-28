@@ -10,7 +10,83 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require material.min
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function(){
+
+  $("button#bussSignupButton").on('click', function(e){
+    e.preventDefault();
+      $.ajax({
+        type: 'GET',
+        url: '/businesses/new',
+        success: function(data){
+          $(".leftContent").empty();
+          $(".leftContent").removeClass('bottomDiv')
+          $(".leftContent").html(data);
+        },
+        error: function(xhr, options, error){
+          console.log(xhr.status);
+          console.log(error);
+        }
+      })
+  });
+
+  $("button#cusSignupButton").on('click', function(e){
+    e.preventDefault();
+      $.ajax({
+        type: 'GET',
+        url: '/customers/new',
+        success: function(data){
+          $(".leftContent").empty();
+          $(".leftContent").removeClass('bottomDiv')
+          $(".leftContent").html(data);
+        },
+        error: function(xhr, options, error){
+          console.log(xhr.status);
+          console.log(error);
+        }
+      })
+  });
+
+  $("button#bussLoginButton").on('click', function(e){
+    e.preventDefault();
+    $.ajax({
+      type: 'GET',
+      url: '/businesses',
+      success: function(data){
+        $(".leftContent").empty();
+        $(".leftContent").removeClass('bottomDiv')
+        $(".leftContent").html(data);
+      },
+      error: function(xhr, options, error){
+        console.log(xhr.status);
+        console.log(error);
+      }
+    })
+  })
+
+  $("button#cusLoginButton").on('click', function(e){
+    e.preventDefault();
+    $.ajax({
+      type: 'GET',
+      url: '/customers',
+      success: function(data){
+        $(".leftContent").empty();
+        $(".leftContent").removeClass('bottomDiv')
+        $(".leftContent").html(data);
+      },
+      error: function(xhr, options, error){
+        console.log(xhr.status);
+        console.log(error);
+      }
+    })
+  })
+
+})
+
+

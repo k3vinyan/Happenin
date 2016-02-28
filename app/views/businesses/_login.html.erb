@@ -1,0 +1,16 @@
+<%= form_for :business do |f| %>
+  <div class="form-div">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, id: 'email_input' %>
+  </div>
+
+  <div class="form-div">
+    <%= f.label :password %><br>
+    <%= f.text_field :password, id: 'password_input' %>
+  </div>
+
+  <div class="form_div">
+    <%= f.submit "Submit", :class => 'busSubmittButton' %>
+  </div>
+
+<% end %>

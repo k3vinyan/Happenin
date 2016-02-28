@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
   def new
-
-
+    if request.xhr?
+      render :partial => "login", :layout => false
+    end
   end
 
   def create
@@ -15,6 +16,7 @@ class SessionsController < ApplicationController
           redirect_to '/login'
       end
     elsif params[:key] != nil
+
       customer = Customer.find_by_key(params[:key])
       if customer
         session[:customer_id] = customer.id

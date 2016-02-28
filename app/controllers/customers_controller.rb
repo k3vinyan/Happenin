@@ -2,15 +2,20 @@ class CustomersController < ApplicationController
   before_action :set_customer, except: [:index, :new, :create]
 
   def index
-    # @customers = Customer.all
-    redirect_to happinings_path
+
   end
 
   def show
+    @user = Customer.find(params[:id])
+    puts @user.inspect
   end
 
   def new
     @customer = Customer.new
+
+    if request.xhr?
+     render :partial => "form", :layout => false
+    end
   end
 
   def create
@@ -32,6 +37,12 @@ class CustomersController < ApplicationController
       redirect_to @customer
     else
       render :edit
+    end
+  end
+
+  def login
+    if request.xhr?
+      render :partial => "login", :layout => false
     end
   end
 
