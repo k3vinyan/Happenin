@@ -1,29 +1,30 @@
 class SessionsController < ApplicationController
   def new
+      @business = Business.new
     if request.xhr?
-      render :partial => "businesses/login", :layout => false
+      # render :partial => "businesses/login", :layout => false
+      render :partial => "businesses/login", locals: {business: @business}, :layout => false
     end
   end
 
   def create
-    if params[:email] != nil
-      business = Business.find_by_email(params[:email])
-      if business && business.authenticate(params[:password])
-        session[:business_id] = business.id
-        redirect_to '/businesses/show', :notice => "Logged in!"
+    if params[:business][:is_business] == "true"
+      @business = Business.find_by_email(params[:email])
+      if @business #&& business.authenticate(params[:password])
+        session[:business_id] = @business.id
+        redirect_to business_url(@business), :notice => "Logged in!"
       else
           flash[:notice] = "Invalid email or password"
-          redirect_to '/login'
+          redirect_to root_url
       end
-    elsif params[:key] != nil
-
-      customer = Customer.find_by_key(params[:key])
+    elsif params[:customer][:is_customer] == true
+      customer = Customer.find(params[:id])
       if customer
         session[:customer_id] = customer.id
         redirect_to customer_path id: session[:customer_id]
       else
           flash.now.alert = "Invalid Key"
-          redirect_to '/'
+          redirect_to root_url
       end
     end
   end

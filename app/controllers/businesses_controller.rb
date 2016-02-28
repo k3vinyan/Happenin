@@ -1,13 +1,12 @@
 class BusinessesController < ApplicationController
-  before_action :set_business, except: [:index, :new, :create]
+  # before_action :set_business, except: [:index, :new, :create]
 
   def index
 
   end
 
   def show
-    # @business = Business.find_by(id: session[:business_id])
-    # @user = Business.find_by(customer_params)
+    @business = Business.find_by(id: session[:business_id])
   end
 
 
