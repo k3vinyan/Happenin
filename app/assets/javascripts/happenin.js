@@ -1,3 +1,5 @@
+// Write data to Firebase
+
 $(document).ready(function(){
     $("#new_happenin").on("click", function( event ) {
       var title = $('#title_input').val()
@@ -12,3 +14,7 @@ $(document).ready(function(){
         myFirebaseRef.child("happenin").child(businessID).push({title: title, description: description, startTime: startTime, endTime: endTime})
     });
 });
+
+// Retrieve data from Firebase
+
+
